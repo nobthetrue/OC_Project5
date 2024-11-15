@@ -1,14 +1,27 @@
 import { Link } from 'react-router-dom'
+import styled from 'styled-components'
+
+const StyledLink = styled(Link)`
+     margin-left: 40px;
+     font-size: 15px;
+`
+
+const HeaderStyled = styled.div`
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     margin: 30px 70px;
+`
 
 function Header() {
      return (
-          <div>
+          <HeaderStyled>
                <img src="/images/LOGOHeader.png" alt="Logo Kasa" />
                <nav>
-                    <Link to="/">Accueil</Link>
-                    <Link to="/APropos">A Propos</Link>
+                    <StyledLink to="/">Accueil</StyledLink>
+                    <StyledLink to="/APropos">A Propos</StyledLink>
                </nav>
-          </div>
+          </HeaderStyled>
      )
 }
 

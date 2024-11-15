@@ -1,9 +1,5 @@
 function APropos() {
-     return (
-          <div>
-               <h1>Test</h1>
-          </div>
-     )
+     return <h1>Test</h1>
 }
 
 export default APropos
