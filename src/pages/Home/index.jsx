@@ -1,5 +1,11 @@
+import Gallery from '../../components/Gallery'
+
 function Home() {
-     return <h1>Pouet</h1>
+     return (
+          <div>
+               <Gallery />
+          </div>
+     )
 }
 
 export default Home

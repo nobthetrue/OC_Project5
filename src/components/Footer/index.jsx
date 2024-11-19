@@ -19,7 +19,7 @@ function LogoFooter() {
      return (
           <FooterStyled>
                <StyledLogo src="/images/LOGOFooter.png" alt="Logo Kasa blanc" />
-               <h4>2020 Kasa. All rights reserved</h4>
+               <p>2020 Kasa. All rights reserved</p>
           </FooterStyled>
      )
 }
