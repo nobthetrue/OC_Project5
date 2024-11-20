@@ -1,7 +1,11 @@
+import Collapse from '../../components/Collapse'
+import FicheAnnonce from '../../components/FicheAnnonce'
+
 function FicheLogement() {
      return (
           <div>
-               <h1>Test</h1>
+               <FicheAnnonce />
+               <Collapse />
           </div>
      )
 }

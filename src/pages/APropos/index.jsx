@@ -1,5 +1,5 @@
 function APropos() {
-     return <h1>Test</h1>
+     return
 }
 
 export default APropos

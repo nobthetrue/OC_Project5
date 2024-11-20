@@ -2,8 +2,6 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
-import { useState, useEffect } from 'react'
-
 const CardStyled = styled.div`
      display: flex;
      position: relative;
@@ -35,10 +33,10 @@ const TitleCardStyled = styled.h4`
      color: white;
 `
 
-function Card({ id, pictures, title }) {
+function Card({ id, cover, title }) {
      return (
           <Link to={`/FicheLogement/${id}`}>
-               <CardStyled key={id} pictures={pictures}>
+               <CardStyled key={id} pictures={cover}>
                     <ShadowCardStyled>
                          <TitleCardStyled>{title}</TitleCardStyled>
                     </ShadowCardStyled>
@@ -50,7 +48,7 @@ function Card({ id, pictures, title }) {
 Card.propTypes = {
      id: PropTypes.string.isRequired,
      title: PropTypes.string.isRequired,
-     pictures: PropTypes.string.isRequired,
+     cover: PropTypes.string.isRequired,
 }
 
 export default Card

@@ -20,7 +20,7 @@ function Gallery() {
                          <Card
                               key={annonces.id}
                               id={annonces.id}
-                              pictures={annonces.pictures[0]}
+                              cover={annonces.cover}
                               title={annonces.title}
                          />
                     )
