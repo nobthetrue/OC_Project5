@@ -7,6 +7,7 @@ function Collapse(props) {
      const [isOpen, setIsOpen] = useState(false)
      const { id } = useParams()
      const title = props.title
+     const desc = props.desc
 
      const annonce = dataAnnonces.find((annonce) => annonce.id === id)
 
@@ -15,9 +16,9 @@ function Collapse(props) {
                <button onClick={() => setIsOpen(!isOpen)} type="button">
                     {title}
                </button>
-               <ul className={isOpen ? open : close}>
-                    <li></li>
-               </ul>
+               <div className={isOpen ? open : close}>
+                    <p>{desc}</p>
+               <div/>
           <div/>
 
 export default Collapse
