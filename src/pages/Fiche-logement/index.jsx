@@ -5,8 +5,8 @@ function FicheLogement() {
      return (
           <div>
                <FicheAnnonce />
-               <Collapse title="Equipement"/>
-               <Collapse title="Description"/>
+               <Collapse title="Equipement" desc=""/>
+               <Collapse title="Description" desc=""/>
           </div>
      )
 }
