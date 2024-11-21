@@ -5,10 +5,14 @@ function Collapse({ title, desc }) {
 
      return (
           <div>
-               <button onClick={() => setIsOpen(!isOpen)} type="button">
+               <button
+                    onClick={() => setIsOpen(!isOpen)}
+                    className={isOpen ? 'open' : 'close'}
+                    type="button"
+               >
                     {title}
                </button>
-               <div className={isOpen ? 'open' : 'close'}>
+               <div className={isOpen ? 'open-desc' : 'close-desc'}>
                     <p>{desc}</p>
                </div>
           </div>

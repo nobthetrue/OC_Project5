@@ -1,8 +1,6 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: "Montserrat", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -10,4 +8,107 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+
+body {
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px 100px;
+    nav {
+      .nav-link {
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 24px;
+        color: black;
+        &:focus {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+    .banner {      
+      position: relative; /* Crée un sous-contexte d'empilement */
+      display: flex;
+      align-items: center;
+      justify-content: center; 
+      border-radius: 25px;
+      margin: 55px 100px 0 100px;
+      
+      .shadow-banner {
+        width: 100%;
+        height: 223px;
+        position: relative; /* Crée un contexte d'empilement pour cet élément */
+        background-color: black;
+        opacity: 0.6;
+        z-index: 1;
+        border-radius: 25px;
+
+      }
+      img {
+        width: 100%;
+        height: 223px;
+        object-fit: cover;
+        z-index: 0; /* Place l'image derrière tout le reste dans ce contexte */
+        position: absolute; /* Permet au z-index de s'appliquer */
+        border-radius: 25px;
+      }
+
+      p {
+        color: white;
+        position: absolute; /* Positionne le texte par rapport à .banner */
+        z-index: 2; /* Place le texte au-dessus de l'image */
+        font-size: 48px;
+        font-weight: 700;
+        filter: drop-shadow(0 1mm 1mm black);
+      }
+    
+  }
+
+
+
+  footer {
+    padding: 30px 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    background-color: black;
+    img {
+      width: 122px;
+      height: 40px;
+    }
+  }
+
+}
+
+
+/*Collapse
+*/
+.close {
+  &:active > .open-desc {
+      animation: desc-down 20s;
+    }
+  }
+
+
+.close-desc {
+    display: none;
+}
+
+@keyframes desc-down{
+  0% {
+    transform:translateY(0);
+  }
+  50% {        margin: 0 70px;
+
+    transform: translateY(0.5);
+  }
+  100% {
+    transform:translateY(1);
+  }
 }

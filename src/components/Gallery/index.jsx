@@ -7,7 +7,7 @@ const GalleryStyled = styled.div`
      grid-template-columns: 1fr 1fr 1fr;
      gap: 45px;
      padding: 35px;
-     margin: 70px;
+     margin: 40px 100px;
      background-color: #f6f6f6;
      border-radius: 25px;
 `
