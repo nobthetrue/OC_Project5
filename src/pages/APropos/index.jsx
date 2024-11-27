@@ -10,7 +10,7 @@ function APropos() {
                          alt="Banner A propos"
                     />
                </div>
-               <div>
+               <div className="div-collapse-a-propos">
                     <Collapse
                          title="Fiabilité"
                          desc="Les annonces postées sur Kasa garantissent une fiabilité totale. Les photos sont conformes aux logements, et toutes les informations sont régulièrement vérifiées par nos équipes."
