@@ -27,7 +27,7 @@ const ShadowCardStyled = styled.div`
 
 const TitleCardStyled = styled.h4`
      position: absolute;
-     margin: 10px;
+     margin: 15px;
      bottom: 0;
      width: 40%;
      color: white;

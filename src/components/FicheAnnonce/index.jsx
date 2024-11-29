@@ -74,7 +74,12 @@ function FicheAnnonce() {
                               <div>
                                    {annonce.equipments.map(
                                         (equipment, index) => (
-                                             <div key={index}>{equipment}</div>
+                                             <div
+                                                  key={index}
+                                                  className="collapse-equipments"
+                                             >
+                                                  {equipment}
+                                             </div>
                                         )
                                    )}
                               </div>

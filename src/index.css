@@ -136,6 +136,7 @@ body {
       .host-name-picture {
         display: flex;
         .host-name {
+          
           color: #FF6060;
           font-size: 18px;
           background-color: red;
@@ -220,9 +221,8 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
+  gap: 70px;
   .collapse-div {
-    background-color: orange;
     width: 50%;
   }
 }
@@ -231,33 +231,99 @@ body {
 
 .collapse-div {
   position: relative;
+  margin: 40px 0;
   z-index: 1;
 }
 
+.title-collapse {
+  margin: 0;
+
+}
+
+.collapse-div-button {
+  display: flex;
+  color: white;
+  background-color: #FF6060;
+  border-radius: 5px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 10px;
+}
+
+.icon-collapse {
+  cursor: pointer;
+  color: white;
+  font-size: 24px;
+  margin-right: 10px;
+}
+
 .collapse-button {
+  display: flex;
   position: relative;
+  background-color: transparent;
+  border: none;
+  padding: 0;
   z-index: 2;
 }
 
 .collapse-content {
+  font-size: 18px;
+  border-radius: 5px;
+  position: relative;
   overflow: hidden;
+  top: -120px;
   max-height: 0;
   opacity: 0;
-  transition: max-height 0.5s ease, opacity 0.5s ease;
+  transition: max-height 0.1s ease, opacity 0.5s ease;
+  .collapse-inner {
+    position: relative;
+    top: -120px;
+    transition: top 0.5s ease, opacity 0.5s ease;
+  }
 }
 
 .collapse-content.open {
+  position: relative;
+  overflow: hidden;
+  top: 0;
+  background-color: #F6F6F6;
   max-height: 500px; 
   opacity: 1;
   transition: max-height 0.5s ease, opacity 0.5s ease;
+  .collapse-inner {
+    position: relative;
+    top: 0;
+    transition: top 0.1s ease, opacity 0.5s ease;
+  }
+}
+
+.collapse-content.close {
+  position: relative;
+  overflow: hidden;
+  top: 0;
+  background-color: #F6F6F6;
+  max-height: 0; 
+  opacity: 1;
+  transition: max-height 0.1s ease, opacity 0.5s ease;
+  .collapse-inner {
+    position: relative;
+    top: -120px;
+    transition: top 0.5s ease, opacity 0.5s ease;
+  }
+}
+
+.collapse-inner {
+  margin: 17px;
+}
+
+.collapse-equipments {
+  margin: 3px 0;
 }
 
 .div-collapse-a-propos {
   margin: 0 100px;
+  padding: 0 100px;
 }
-
-
-
 
 
 /*Collapse
