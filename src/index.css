@@ -85,6 +85,13 @@ body {
       width: 122px;
       height: 40px;
     }
+    .footer-text {
+      display: flex;
+      align-items: center;
+      .icon-c {
+        margin-right: 5px;
+      }
+    }
   }
 
 }
@@ -104,12 +111,11 @@ body {
   .description-annonce {
     display: flex;
     flex-direction: row;
-    margin-bottom: 30px;
-    height: auto;
+    margin: 30px 0;
     .desc-gauche {
-      width: 60%;
-      background-color: blue;
+      width: 80%;
       .title-annonce {
+        margin: 0;
         font-size: 36px;
         color: #FF6060;
       }
@@ -132,16 +138,16 @@ body {
       display: flex;
       align-items: end;
       flex-direction: column;
-      width: 40%;
+      width: 20%;
       .host-name-picture {
         display: flex;
+        gap: 10px;
         .host-name {
-          
+          display: flex;
+          align-items: center;
           color: #FF6060;
           font-size: 18px;
-          background-color: red;
           margin: 0;
-          height: 20px;
 
         }
         .host-picture {
@@ -151,9 +157,7 @@ body {
         }
       }
       .rating {
-        height: auto;
-        width: auto;
-        margin: 0;
+        padding-top: 30px;
       }
     }
   }  
@@ -215,6 +219,12 @@ body {
   .next-button {
     right: 15px;
   }
+  .slider-number {
+    color: white;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+  }
 }
 
 .div-collapse-fiche-annonce {
@@ -227,17 +237,26 @@ body {
   }
 }
 
+.star {
+  color: #FF6060;
+  font-size: 1.5rem;
+  width: 24px;
+  height: 24px;
+  margin-left: 10px;
+}
 
+.empty {
+  color: #E3E3E3;
+}
 
 .collapse-div {
   position: relative;
-  margin: 40px 0;
+  margin-bottom: 50px;
   z-index: 1;
 }
 
 .title-collapse {
   margin: 0;
-
 }
 
 .collapse-div-button {
@@ -247,14 +266,23 @@ body {
   border-radius: 5px;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 10px;
+  padding: 15px 20px 15px 10px;
 }
 
-.icon-collapse {
+.haut,.bas {
   cursor: pointer;
   color: white;
   font-size: 24px;
-  margin-right: 10px;
+}
+
+.haut {
+  transform: rotate(0);
+  transition: transform 0.3s ease-in;
+}
+
+.bas {
+  transform: rotate(-180deg);
+  transition: transform 0.3s ease-in;
 }
 
 .collapse-button {
@@ -264,6 +292,7 @@ body {
   border: none;
   padding: 0;
   z-index: 2;
+  
 }
 
 .collapse-content {
@@ -316,116 +345,7 @@ body {
   margin: 17px;
 }
 
-.collapse-equipments {
-  margin: 3px 0;
-}
-
 .div-collapse-a-propos {
-  margin: 0 100px;
+  margin: 40px 100px;
   padding: 0 100px;
 }
-
-
-/*Collapse
-*/
-
-/* .collapse-div {
-  position: relative;
-  z-index: 1;
-}
-
-.collapse-button {
-  position: relative;
-  z-index: 2;
-}
-
-.collapse-content {
-  overflow: hidden;
-  position: absolute;
-  bottom: 0;
-  z-index: 0;
-  display: none;
-  max-height: 0;
-  animation: drop-in 1s forwards;
-}
-.collapse-content.open {
-  position: relative;
-  display: block;
-  z-index: 0;
-  max-height: 500px;
-  opacity: 1;
-  background-color: red;
-}
-
-@keyframes drop-in {
-  0% {
-    max-height: 0;
-    opacity: 0;
-    transform: translateY(-100%);
-  }
-  50% {
-    max-height: 100px;
-    opacity: 1;
-  }
-  100% {
-    max-height: 500px;
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes drop-out {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    height: 0;
-    opacity: 0;
-  }
-} */
-
-
-
-
-/* .collapse-div {
-  position: relative;
-  margin-bottom: 10px;
-  width: 100%;
-}
-
-.collapse-button {
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.3s;
-}
-
-.collapse-button:hover {
-  background-color: #0056b3;
-}
-
-.collapse-content {
-  overflow: hidden;
-  max-height: 0;
-  transform: translateY(-100%); 
-  opacity: 0;
-  transition: 
-    max-height 1s ease-in-out, 
-    transform 0.5s ease-in-out, 
-    opacity 0.5s ease-in-out 0.5s;
-}
-
-.collapse-content.open {
-  max-height: 500px; 
-  transform: translateY(0);
-  opacity: 1; 
-}
-
-.collapse-inner {
-  padding: 10px;
-  background-color: #f1f1f1;
-  border: 1px solid #ddd;
-} */

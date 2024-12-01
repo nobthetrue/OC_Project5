@@ -29,7 +29,7 @@
 
 import PropTypes from 'prop-types'
 import { useState } from 'react'
-import { FaChevronDown } from 'react-icons/fa6'
+import { FaChevronUp } from 'react-icons/fa6'
 
 function Collapse({ title, desc }) {
      const [isOpen, setIsOpen] = useState(false)
@@ -56,7 +56,7 @@ function Collapse({ title, desc }) {
                          className="collapse-button"
                          type="button"
                     >
-                         <FaChevronDown className="icon-collapse" />
+                         <FaChevronUp className={isOpen ? 'bas' : 'haut'} />
                     </button>
                </div>
 

@@ -2,12 +2,16 @@ import { useParams } from 'react-router-dom'
 import { useState } from 'react'
 import dataAnnonces from '../../annonce.json'
 import Collapse from '../Collapse'
+import { FaStar } from 'react-icons/fa6'
 
 function FicheAnnonce() {
      const [currentIndex, setCurrentIndex] = useState(0)
      const { id } = useParams()
 
      const annonce = dataAnnonces.find((annonce) => annonce.id === id)
+
+     const ratingStar = parseInt(annonce.rating)
+     const missStar = 5 - ratingStar
 
      return (
           <div className="fiche-annonce">
@@ -36,6 +40,9 @@ function FicheAnnonce() {
                     >
                          &#10095;
                     </button>
+                    <p className="slider-number">
+                         {currentIndex + 1}/{annonce.pictures.length}
+                    </p>
                     <div className="div-images">
                          <img
                               className="slider-images"
@@ -63,10 +70,22 @@ function FicheAnnonce() {
                                    alt=""
                               />
                          </div>
-                         <p className="rating">{annonce.rating}</p>
+                         <div className="rating">
+                              {[...Array(ratingStar)].map(() => (
+                                   <FaStar className="star filled" />
+                              ))}
+                              {[...Array(missStar)].map(() => (
+                                   <FaStar className="star empty" />
+                              ))}
+                         </div>
                     </div>
                </div>
                <div className="div-collapse-fiche-annonce">
+                    <Collapse
+                         className="collapse-fiche-annonce"
+                         title="Description"
+                         desc={annonce.description}
+                    />
                     <Collapse
                          className="collapse-fiche-annonce"
                          title="Equipement"
@@ -84,11 +103,6 @@ function FicheAnnonce() {
                                    )}
                               </div>
                          }
-                    />
-                    <Collapse
-                         className="collapse-fiche-annonce"
-                         title="Description"
-                         desc={annonce.description}
                     />
                </div>
           </div>
