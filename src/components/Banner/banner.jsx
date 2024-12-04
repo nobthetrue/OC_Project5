@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types'
+import './banner.scss'
 
 function Banner({ title, image, alt }) {
      return (

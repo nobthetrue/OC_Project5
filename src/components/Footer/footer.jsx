@@ -1,4 +1,5 @@
 import { FaRegCopyright } from 'react-icons/fa'
+import './footer.scss'
 
 function LogoFooter() {
      return (

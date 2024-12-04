@@ -1,20 +1,10 @@
-import Card from '../Card'
+import Card from '../Card/card'
 import dataAnnonces from '../../annonce.json'
-import styled from 'styled-components'
-
-const GalleryStyled = styled.div`
-     display: grid;
-     grid-template-columns: 1fr 1fr 1fr;
-     gap: 45px;
-     padding: 35px;
-     margin: 40px 100px;
-     background-color: #f6f6f6;
-     border-radius: 25px;
-`
+import './gallery.scss'
 
 function Gallery() {
      return (
-          <GalleryStyled>
+          <div className="gallery">
                {dataAnnonces.map((annonces) => {
                     return (
                          <Card
@@ -25,7 +15,7 @@ function Gallery() {
                          />
                     )
                })}
-          </GalleryStyled>
+          </div>
      )
 }
 

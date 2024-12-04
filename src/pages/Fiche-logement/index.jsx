@@ -1,4 +1,4 @@
-import FicheAnnonce from '../../components/FicheAnnonce'
+import FicheAnnonce from '../../components/FicheAnnonce/ficheannonce'
 
 function FicheLogement() {
      return (

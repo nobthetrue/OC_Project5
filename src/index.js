@@ -1,13 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import './index.css'
+import './index.scss'
 import Home from './pages/Home'
 import APropos from './pages/APropos'
 import Error from './pages/Error'
 import FicheLogement from './pages/Fiche-logement'
-import Header from './components/Header'
-import Footer from './components/Footer'
+import Header from './components/Header/header'
+import Footer from './components/Footer/footer'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(

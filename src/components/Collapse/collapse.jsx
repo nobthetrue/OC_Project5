@@ -1,35 +1,7 @@
-// import PropTypes from 'prop-types'
-// import { useState } from 'react'
-
-// function Collapse({ title, desc }) {
-//      const [isOpen, setIsOpen] = useState(false)
-
-//      return (
-//           <div className="collapse-div">
-//                <button
-//                     onClick={() => setIsOpen(!isOpen)}
-//                     className="collapse-button"
-//                     type="button"
-//                >
-//                     {title}
-//                </button>
-//                <div className={`collapse-content ${isOpen ? 'open' : ''}`}>
-//                     <div className="collapse-inner">{desc}</div>
-//                </div>
-//           </div>
-//      )
-// }
-
-// export default Collapse
-
-// Collapse.propTypes = {
-//      title: PropTypes.string.isRequired,
-//      desc: PropTypes.string.isRequired,
-// }
-
 import PropTypes from 'prop-types'
 import { useState } from 'react'
 import { FaChevronUp } from 'react-icons/fa6'
+import './collapse.scss'
 
 function Collapse({ title, desc }) {
      const [isOpen, setIsOpen] = useState(false)

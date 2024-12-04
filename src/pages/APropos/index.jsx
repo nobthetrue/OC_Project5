@@ -1,5 +1,5 @@
-import Collapse from '../../components/Collapse'
-import Banner from '../../components/Banner'
+import Collapse from '../../components/Collapse/collapse'
+import Banner from '../../components/Banner/banner'
 
 function APropos() {
      return (

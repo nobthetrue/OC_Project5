@@ -1,0 +1,97 @@
+.div-collapse-fiche-annonce {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 70px;
+    .collapse-div {
+      width: 50%;
+    }
+  }
+  
+.collapse-div {
+    position: relative;
+    margin-bottom: 50px;
+    z-index: 1;
+    .collapse-div-button {
+        display: flex;
+        color: white;
+        background-color: #FF6060;
+        border-radius: 5px;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 20px 15px 10px;
+        .title-collapse {
+            margin: 0;
+        }
+        .collapse-button {
+            display: flex;
+            position: relative;
+            background-color: transparent;
+            border: none;
+            padding: 0;
+            z-index: 2;
+            .haut,.bas {
+                cursor: pointer;
+                color: white;
+                font-size: 24px;
+            }
+            .haut {
+                transform: rotate(0);
+                transition: transform 0.3s ease-in;
+            }
+            .bas {
+                transform: rotate(-180deg);
+                transition: transform 0.3s ease-in;
+            }
+        }
+    }
+    .collapse-content {
+        font-size: 18px;
+        border-radius: 5px;
+        position: relative;
+        overflow: hidden;
+        top: -120px;
+        max-height: 0;
+        opacity: 0;
+        transition: max-height 0.1s ease, opacity 0.5s ease;
+        .collapse-inner {
+            position: relative;
+            top: -120px;
+            margin: 17px;
+            transition: top 0.5s ease, opacity 0.5s ease;
+        }
+        &.open {
+            position: relative;
+            overflow: hidden;
+            top: 0;
+            background-color: #F6F6F6;
+            max-height: 500px; 
+            opacity: 1;
+            transition: max-height 0.5s ease, opacity 0.5s ease;
+            .collapse-inner {
+                position: relative;
+                top: 0;
+                transition: top 0.1s ease, opacity 0.5s ease;
+            }
+        }
+        &.close {
+            position: relative;
+            overflow: hidden;
+            top: 0;
+            background-color: #F6F6F6;
+            max-height: 0; 
+            opacity: 1;
+            transition: max-height 0.1s ease, opacity 0.5s ease;
+            .collapse-inner {
+                position: relative;
+                top: -120px;
+                transition: top 0.5s ease, opacity 0.5s ease;
+            }
+        }
+    }
+}
+
+.div-collapse-a-propos {
+margin: 40px 100px;
+padding: 0 100px;
+}

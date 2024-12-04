@@ -1,8 +1,9 @@
 import { useParams } from 'react-router-dom'
 import { useState } from 'react'
 import dataAnnonces from '../../annonce.json'
-import Collapse from '../Collapse'
+import Collapse from '../Collapse/collapse'
 import { FaStar } from 'react-icons/fa6'
+import './ficheannonce.scss'
 
 function FicheAnnonce() {
      const [currentIndex, setCurrentIndex] = useState(0)
@@ -57,7 +58,9 @@ function FicheAnnonce() {
                          <p className="localisation">{annonce.location}</p>
                          <div>
                               {annonce.tags.map((tag) => (
-                                   <span className="tags">{tag}</span>
+                                   <span key={tag} className="tags">
+                                        {tag}
+                                   </span>
                               ))}
                          </div>
                     </div>

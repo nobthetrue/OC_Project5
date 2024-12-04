@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
+import './header.scss'
 
 const StyledLink = styled(Link)`
      margin-left: 60px;
