@@ -2,16 +2,17 @@ import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import './header.scss'
 
-const StyledLink = styled(Link)`
-     margin-left: 60px;
-     font-size: 15px;
-`
+const StyledLink = styled(Link)``
 
 function Header() {
      return (
           <header>
-               <img src="/images/LOGOHeader.png" alt="Logo Kasa" />
-               <nav>
+               <img
+                    className="logo-header"
+                    src="/images/LOGOHeader.png"
+                    alt="Logo Kasa"
+               />
+               <nav className="nav-header">
                     <StyledLink className="nav-link" to="/">
                          Accueil
                     </StyledLink>

@@ -9,9 +9,29 @@ header {
         font-weight: 500;
         font-size: 24px;
         color: black;
+        margin-left: 60px;
         &:focus {
           text-decoration: underline;
         }
       }
     }
   }
+
+@media screen and (max-width: 375px) {
+  header {
+    display: flex;
+    margin: 15px;
+    .logo-header {
+      width: 145px;
+      height: 45px;
+    }
+    .nav-header {
+      display: flex;
+      .nav-link {
+        font-size: 12px;
+        text-transform: uppercase;
+        margin-left: 20px;
+      }
+    }
+  }
+}

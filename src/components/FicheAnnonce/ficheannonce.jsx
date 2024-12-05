@@ -4,6 +4,8 @@ import dataAnnonces from '../../annonce.json'
 import Collapse from '../Collapse/collapse'
 import { FaStar } from 'react-icons/fa6'
 import './ficheannonce.scss'
+import React from 'react'
+import Error from '../../pages/Error'
 
 function FicheAnnonce() {
      const [currentIndex, setCurrentIndex] = useState(0)
@@ -11,8 +13,17 @@ function FicheAnnonce() {
 
      const annonce = dataAnnonces.find((annonce) => annonce.id === id)
 
+     if (!annonce) {
+          return <Error />
+     }
+
      const ratingStar = parseInt(annonce.rating)
-     const missStar = 5 - ratingStar
+     const stars = [...Array(5)].map((_, index) => (
+          <FaStar
+               key={index}
+               className={`star ${index < ratingStar ? 'filled' : 'empty'}`}
+          />
+     ))
 
      return (
           <div className="fiche-annonce">
@@ -26,6 +37,7 @@ function FicheAnnonce() {
                                         : prevIndex - 1
                               )
                          }}
+                         aria-label="Image précédente"
                     >
                          &#10094;
                     </button>
@@ -38,6 +50,7 @@ function FicheAnnonce() {
                                         : prevIndex + 1
                               )
                          }}
+                         aria-label="Image suivante"
                     >
                          &#10095;
                     </button>
@@ -48,7 +61,8 @@ function FicheAnnonce() {
                          <img
                               className="slider-images"
                               src={annonce.pictures[currentIndex]}
-                              alt=""
+                              alt={annonce.title}
+                              loading="lazy"
                          />
                     </div>
                </div>
@@ -57,8 +71,8 @@ function FicheAnnonce() {
                          <p className="title-annonce">{annonce.title}</p>
                          <p className="localisation">{annonce.location}</p>
                          <div>
-                              {annonce.tags.map((tag) => (
-                                   <span key={tag} className="tags">
+                              {annonce.tags.map((tag, index) => (
+                                   <span key={tag + index} className="tags">
                                         {tag}
                                    </span>
                               ))}
@@ -73,14 +87,7 @@ function FicheAnnonce() {
                                    alt=""
                               />
                          </div>
-                         <div className="rating">
-                              {[...Array(ratingStar)].map(() => (
-                                   <FaStar className="star filled" />
-                              ))}
-                              {[...Array(missStar)].map(() => (
-                                   <FaStar className="star empty" />
-                              ))}
-                         </div>
+                         <div className="rating">{stars}</div>
                     </div>
                </div>
                <div className="div-collapse-fiche-annonce">
