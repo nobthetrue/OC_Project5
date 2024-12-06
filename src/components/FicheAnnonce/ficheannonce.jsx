@@ -25,38 +25,45 @@ function FicheAnnonce() {
           />
      ))
 
+     const hasMultipleImages = annonce.pictures.length > 1
+
      return (
           <div className="fiche-annonce">
                <div className="slider">
-                    <button
-                         className="prev-button"
-                         onClick={() => {
-                              setCurrentIndex((prevIndex) =>
-                                   prevIndex === 0
-                                        ? annonce.pictures.length - 1
-                                        : prevIndex - 1
-                              )
-                         }}
-                         aria-label="Image précédente"
-                    >
-                         &#10094;
-                    </button>
-                    <button
-                         className="next-button"
-                         onClick={() => {
-                              setCurrentIndex((prevIndex) =>
-                                   prevIndex === annonce.pictures.length - 1
-                                        ? 0
-                                        : prevIndex + 1
-                              )
-                         }}
-                         aria-label="Image suivante"
-                    >
-                         &#10095;
-                    </button>
-                    <p className="slider-number">
-                         {currentIndex + 1}/{annonce.pictures.length}
-                    </p>
+                    {hasMultipleImages && (
+                         <div>
+                              <button
+                                   className="prev-button"
+                                   onClick={() => {
+                                        setCurrentIndex((prevIndex) =>
+                                             prevIndex === 0
+                                                  ? annonce.pictures.length - 1
+                                                  : prevIndex - 1
+                                        )
+                                   }}
+                                   aria-label="Image précédente"
+                              >
+                                   &#10094;
+                              </button>
+                              <button
+                                   className="next-button"
+                                   onClick={() => {
+                                        setCurrentIndex((prevIndex) =>
+                                             prevIndex ===
+                                             annonce.pictures.length - 1
+                                                  ? 0
+                                                  : prevIndex + 1
+                                        )
+                                   }}
+                                   aria-label="Image suivante"
+                              >
+                                   &#10095;
+                              </button>
+                              <p className="slider-number">
+                                   {currentIndex + 1}/{annonce.pictures.length}
+                              </p>
+                         </div>
+                    )}
                     <div className="div-images">
                          <img
                               className="slider-images"

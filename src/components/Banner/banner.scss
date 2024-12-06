@@ -27,6 +27,7 @@
     p {
       color: white;
       position: absolute;
+      margin: 0 15px;
       z-index: 2;
       font-size: 48px;
       font-weight: 700;
@@ -36,7 +37,7 @@
     }
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 800px) {
   .banner {      
     margin: 20px 15px;
     border-radius: 10px;

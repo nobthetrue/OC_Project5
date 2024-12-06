@@ -104,7 +104,28 @@
   }  
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 1150px) {
+  .fiche-annonce {
+  .star {
+      width: 18px;
+      height: 18px;
+      margin-left: 0;
+      margin-right: 5px;
+    }
+    .description-annonce {
+      .desc-gauche {
+        .title-annonce {
+          font-size: 25px;
+        }
+        .tags {
+          margin-bottom: 10px;
+        }
+      }
+    }  
+  }
+}
+
+@media screen and (max-width: 800px) {
   .fiche-annonce {
     margin: 15px;
     .slider {
