@@ -47,5 +47,8 @@ export default Collapse
 
 Collapse.propTypes = {
      title: PropTypes.string.isRequired,
-     desc: PropTypes.string.isRequired,
+     desc: PropTypes.oneOfType([
+          PropTypes.string.isRequired,
+          PropTypes.object.isRequired,
+     ]),
 }
