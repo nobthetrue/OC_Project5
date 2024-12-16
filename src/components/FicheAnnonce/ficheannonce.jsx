@@ -1,7 +1,6 @@
 import { useParams } from 'react-router-dom'
 import dataAnnonces from '../../annonce.json'
 import Collapse from '../Collapse/collapse'
-import { FaStar } from 'react-icons/fa6'
 import './ficheannonce.scss'
 import React from 'react'
 import Error from '../../pages/Error'
@@ -18,8 +17,14 @@ function FicheAnnonce() {
 
      const ratingStar = parseInt(annonce.rating)
      const stars = [...Array(5)].map((_, index) => (
-          <FaStar
+          <img
                key={index}
+               src={
+                    index < ratingStar
+                         ? '../images/fillstar.png'
+                         : '../images/emptystar.png'
+               }
+               alt={index < ratingStar ? 'Étoile remplie' : 'Étoile vide'}
                className={`star ${index < ratingStar ? 'filled' : 'empty'}`}
           />
      ))

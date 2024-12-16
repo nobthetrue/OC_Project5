@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types'
 import { useState } from 'react'
-import { FaChevronUp } from 'react-icons/fa6'
 import './collapse.scss'
 
 function Collapse({ title, desc }) {
@@ -28,7 +27,11 @@ function Collapse({ title, desc }) {
                          className="collapse-button"
                          type="button"
                     >
-                         <FaChevronUp className={isOpen ? 'bas' : 'haut'} />
+                         <img
+                              src="../images/chevron.png"
+                              alt="chevron"
+                              className={isOpen ? 'bas' : 'haut'}
+                         />
                     </button>
                </div>
 

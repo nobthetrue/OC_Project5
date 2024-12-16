@@ -32,8 +32,6 @@
             z-index: 2;
             .haut,.bas {
                 cursor: pointer;
-                color: white;
-                font-size: 24px;
             }
             .haut {
                 transform: rotate(0);
@@ -111,7 +109,8 @@ padding: 0 100px;
             padding: 10px;
             .collapse-button {
                 .haut, .bas {
-                    font-size: 20px;
+                    width: 16px;
+                    height: 9px;
                 }
             }
         }
